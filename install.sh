@@ -4,7 +4,8 @@ echo $SHELL
 sudo apt update
 
 # install zsh
-sudo apt install zsh nvim curl git -y
+sudo apt install zsh curl git -y
+sudo snap install nvim --classic
 
 # Change the default login shell to zsh
 chsh -s $(which zsh)
