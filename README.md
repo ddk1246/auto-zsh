@@ -1,4 +1,4 @@
 install command
 
-```sudo bash install.sh```
+```bash install.sh```
 
