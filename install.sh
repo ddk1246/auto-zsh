@@ -6,6 +6,9 @@ CWR="[\e[1;35mWARNING\e[0m]"
 CAC="[\e[1;33mACTION\e[0m]"
 INSTLOG="install.log"
 
+set -e
+set -o pipefail
+
 echo -e "$CNT - Current Shell: $SHELL, it will be [\e[1;32mZSH\e[0m]"
 
 read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to continue with the install [Y/n] ' INST
