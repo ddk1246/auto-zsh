@@ -18,12 +18,12 @@ fi
 
 # update
 echo -e "$CNT - Update apt"
-sudo apt update
+# sudo apt update
 echo -e "$COK - Finish Update apt\n"
 
 # install zsh
 echo -e "$CNT - Install zsh"
-sudo apt install zsh curl git powerline fonts-powerline autojump -y
+# sudo apt install zsh curl git powerline fonts-powerline autojump -y
 echo -e "$COK - Finish install zsh\n"
 
 # copy custom config
@@ -35,9 +35,13 @@ echo -e "$CAC - Copy custom .zshrc to ~/.zshrc"
 cp .zshrc ~/.zshrc
 
 # install oh-my-zsh
-echo -e "$CNT - Install oh-my-zsh"
-echo -e "$CWR Please Exit zsh after install it "
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+echo -e "$CNT - Install oh-my-zsh\n$CWR - \e[1;35m Please exit zsh after install it !!! \e[0m"
+if sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"; then
+    echo -e "$COK - Finish install oh-my-zsh\n"
+else
+    echo -e "$CER - Install oh-my-zsh failed.\n"
+    exit 1  # Exit with a non-zero status to indicate an error
+fi
 
 # install powerlevel10k zsh-syntax-highlighting zsh-autosuggestions
 echo -e "$CNT - Install extensions"
@@ -46,4 +50,4 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions &>> $INSTLOG
 echo -e "$COK - Finish clone powerlevel10k zsh-syntax-highlighting zsh-autosuggestions \n"
 
-exec zsh -i -c "source ~/.zshrc"
+# exec zsh -i -c "source ~/.zshrc"
