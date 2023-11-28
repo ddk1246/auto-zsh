@@ -36,6 +36,7 @@ cp .zshrc ~/.zshrc
 
 # install oh-my-zsh
 echo -e "$CNT - Install oh-my-zsh"
+echo -e "$CWR Please Exit zsh after install it "
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # install powerlevel10k zsh-syntax-highlighting zsh-autosuggestions
@@ -44,3 +45,5 @@ git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$H
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting &>> $INSTLOG
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions &>> $INSTLOG
 echo -e "$COK - Finish clone powerlevel10k zsh-syntax-highlighting zsh-autosuggestions \n"
+
+exec zsh -i -c "source ~/.zshrc"
