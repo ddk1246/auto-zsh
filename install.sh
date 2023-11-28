@@ -36,7 +36,7 @@ cp .zshrc ~/.zshrc
 
 # install oh-my-zsh
 echo -e "$CNT - Install oh-my-zsh"
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # install powerlevel10k zsh-syntax-highlighting zsh-autosuggestions
 echo -e "$CNT - Install extensions"
