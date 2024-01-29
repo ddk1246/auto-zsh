@@ -124,5 +124,5 @@ source $ZSH/oh-my-zsh.sh
 precmd () { echo -n "\x1b]1337;CurrentDir=$(pwd)\x07" }
 
 alias ll="ls -lah"
-export TREM=xterm-256color
+export TERM=xterm-256color
 
