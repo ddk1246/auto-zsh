@@ -31,7 +31,7 @@ echo -e "$COK - Finish install zsh\n"
 
 # copy custom zsh config
 if [ -f ~/.zshrc ]; then
-    echo -e "$CWR Save current config [~/.zshrc] To [~/.zshrc.backup]"
+    echo -e "$CWR - Save current config [~/.zshrc] To [~/.zshrc.backup]"
     mv ~/.zshrc ~/.zshrc.backup
 fi
 echo -e "$CAC - Copy custom .zshrc to ~/.zshrc"
@@ -39,7 +39,7 @@ cp .zshrc ~/.zshrc
 
 # copy custom tmux config
 if [ -f ~/.tmux.conf ];then
-    echo -e "$CWR Save tmux config [~/.tmux.conf] To [~/.tmux.conf.backup]"
+    echo -e "$CWR - Save tmux config [~/.tmux.conf] To [~/.tmux.conf.backup]"
     mv ~/.tmux.conf ~/.tmux.conf.backup
 fi
 echo -e "$CAC - Copy tmux .tmux.conf to ~/.tmux.conf"
