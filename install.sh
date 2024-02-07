@@ -26,16 +26,24 @@ echo -e "$COK - Finish Update apt\n"
 
 # install zsh
 echo -e "$CNT - Install zsh"
-sudo apt install zsh curl git powerline fonts-powerline autojump -y
+sudo apt install zsh curl git powerline fonts-powerline autojump tmux -y
 echo -e "$COK - Finish install zsh\n"
 
-# copy custom config
+# copy custom zsh config
 if [ -f ~/.zshrc ]; then
     echo -e "$CWR Save current config [~/.zshrc] To [~/.zshrc.backup]"
     mv ~/.zshrc ~/.zshrc.backup
 fi
 echo -e "$CAC - Copy custom .zshrc to ~/.zshrc"
 cp .zshrc ~/.zshrc
+
+# copy custom tmux config
+if [ -f ~/.tmux.conf ];then
+    echo -e "$CWR Save tmux config [~/.tmux.conf] To [~/.tmux.conf.backup]"
+    mv ~/.tmux.conf ~/.tmux.conf.backup
+fi
+echo -e "$CAC - Copy tmux .tmux.conf to ~/.tmux.conf"
+cp .tmux.conf ~/.tmux.conf
 
 # install oh-my-zsh
 echo -e "$CNT - Install oh-my-zsh\n"
